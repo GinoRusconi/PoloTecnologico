@@ -133,8 +133,5 @@ namespace Ejercicio_13_Billetera.Modelo
                 _billeteraVirtual[i,1] = Convert.ToInt32(Console.ReadLine());
             }
         }
-
     }
-
-    
 }

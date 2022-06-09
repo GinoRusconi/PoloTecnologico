@@ -5,7 +5,6 @@ int billeterasCreadas = 1;
 int opcion;
 do
 {
-    
     do
     {
         Console.Clear();
