@@ -90,19 +90,19 @@ namespace Ejercicio_13_Billetera.Modelo
         }
 
         // recibir una billetera y conbinar
-        public Billetera Combinar(Billetera billetera1, Billetera billetera2, int idNuevaBilletera)
+        public Billetera Combinar(Billetera billetera1, int idNuevaBilletera)
         {
             
             Billetera billeteraNueva = new Billetera();
             billeteraNueva.iD = idNuevaBilletera;
             
-            billeteraNueva.BilletesDe10 = billetera2.BilletesDe10 + billetera1.BilletesDe10;
-            billeteraNueva.BilletesDe20 = billetera2.BilletesDe20 + billetera1.BilletesDe20;
-            billeteraNueva.BilletesDe50 = billetera2.BilletesDe50 + billetera1.BilletesDe50;
-            billeteraNueva.BilletesDe100 = billetera2.BilletesDe100 + billetera1.BilletesDe100;
-            billeteraNueva.BilletesDe200 = billetera2.BilletesDe200 + billetera1.BilletesDe200;
-            billeteraNueva.BilletesDe500 = billetera2.BilletesDe500 + billetera1.BilletesDe500;
-            billeteraNueva.BilletesDe1000 = billetera2.BilletesDe1000 + billetera1.BilletesDe1000;
+            billeteraNueva.BilletesDe10 = BilletesDe10 + billetera1.BilletesDe10;
+            billeteraNueva.BilletesDe20 = BilletesDe20 + billetera1.BilletesDe20;
+            billeteraNueva.BilletesDe50 = BilletesDe50 + billetera1.BilletesDe50;
+            billeteraNueva.BilletesDe100 = BilletesDe100 + billetera1.BilletesDe100;
+            billeteraNueva.BilletesDe200 = BilletesDe200 + billetera1.BilletesDe200;
+            billeteraNueva.BilletesDe500 = BilletesDe500 + billetera1.BilletesDe500;
+            billeteraNueva.BilletesDe1000 = BilletesDe1000 + billetera1.BilletesDe1000;
             
             return billeteraNueva;
         }

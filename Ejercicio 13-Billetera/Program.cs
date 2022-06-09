@@ -116,13 +116,13 @@ do
                     Console.WriteLine("Esa billetera no existe");
                 }
             } while (numeroDeBilleteraValido);
-            Billetera nuevaBilletera = new Billetera();
-            nuevaBilletera = nuevaBilletera.Combinar(billeteras[numeroDeBilletera-1], billeteras[numeroDeBilletera2-1], billeterasCreadas++);
+            
+            Billetera nuevaBilletera = billeteras[numeroDeBilletera - 1].Combinar(billeteras[numeroDeBilletera2 - 1], billeterasCreadas++);
+            Console.WriteLine($"Se ah creado una nueva billetera con ID {nuevaBilletera.iD}");
+            billeteras.Add(nuevaBilletera);
             billeteras[numeroDeBilletera-1].LimpiarBilletera();
             billeteras[numeroDeBilletera2-1].LimpiarBilletera();
-            billeteras.Add(nuevaBilletera);
-            Console.WriteLine($"Se ah creado una nueva billetera con ID {nuevaBilletera.iD}");
-            Console.WriteLine($"Las billeteras de id {billeteras[numeroDeBilletera - 1]} y {billeteras[numeroDeBilletera2 - 1]} han sido limpiadas");
+            Console.WriteLine($"Las billeteras de id {billeteras[numeroDeBilletera - 1].iD} y {billeteras[numeroDeBilletera2 - 1].iD} han sido limpiadas");
             Console.WriteLine("------------------------");
             Console.WriteLine("Presione Cualquier tecla");
             Console.ReadLine();
