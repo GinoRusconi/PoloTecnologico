@@ -8,12 +8,12 @@ do
     do
     {
         Console.Clear();
-        Console.WriteLine("Bienvenido a la administracion de billeteras, que accion desea Realizar?");
-        Console.WriteLine("Opcion 1: Crear Billetera");
-        Console.WriteLine("Opcion 2: Mostrar una Billetera");
-        Console.WriteLine("Opcion 3: Comprobar total de dinero en una billetera");
-        Console.WriteLine("Opcion 4: Combinar 2 billeteras creando una nueva");
-        Console.WriteLine("Opcion 5: Salir");
+        Console.WriteLine("Bienvenido a la administración de billeteras, ¿que acción desea Realizar?");
+        Console.WriteLine("Opción 1: Crear Billetera");
+        Console.WriteLine("Opción 2: Mostrar una Billetera");
+        Console.WriteLine("Opción 3: Comprobar total de dinero en una billetera");
+        Console.WriteLine("Opción 4: Combinar 2 billeteras creando una nueva");
+        Console.WriteLine("Opción 5: Salir");
 
         opcion = Convert.ToInt32(Console.ReadLine());
 
@@ -30,7 +30,7 @@ do
             billeteras.Add(billetera);
             Console.WriteLine($"Se a creado la billetera con exito su ID es {billetera.iD}");
             Console.WriteLine("------------------------");
-            Console.WriteLine("Precione Cualquier tecla");
+            Console.WriteLine("Presione Cualquier tecla");
             Console.ReadLine();
             break;
         case 2:
@@ -53,7 +53,7 @@ do
             } while (numeroDeBilleteraValido);
             billeteras[numeroDeBilletera-1].MostrarContenidoDeBilletera();
             Console.WriteLine("------------------------");
-            Console.WriteLine("Precione Cualquier tecla");
+            Console.WriteLine("Presione Cualquier tecla");
             Console.ReadLine();
             break;
         case 3:
@@ -76,7 +76,7 @@ do
             } while (numeroDeBilleteraValido);
             Console.WriteLine($"El total de esta billetera es: {billeteras[numeroDeBilletera-1].Total()}");
             Console.WriteLine("------------------------");
-            Console.WriteLine("Precione Cualquier tecla");
+            Console.WriteLine("Presione Cualquier tecla");
             Console.ReadLine();
             break;
         case 4:
@@ -124,7 +124,7 @@ do
             Console.WriteLine($"Se ah creado una nueva billetera con ID {nuevaBilletera.iD}");
             Console.WriteLine($"Las billeteras de id {billeteras[numeroDeBilletera - 1]} y {billeteras[numeroDeBilletera2 - 1]} han sido limpiadas");
             Console.WriteLine("------------------------");
-            Console.WriteLine("Precione Cualquier tecla");
+            Console.WriteLine("Presione Cualquier tecla");
             Console.ReadLine();
             break;
     }
