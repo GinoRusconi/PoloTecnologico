@@ -16,7 +16,7 @@ namespace Ejercicio_13_Billetera.Modelo
         public int iD { get; set;}
         public int BilletesDe10 
         {
-            get { return _billeteraVirtual[0,0]; }
+            get { return _billeteraVirtual[0,1]; }
             set 
             { 
                 _billeteraVirtual[0,1] = value;
@@ -25,7 +25,7 @@ namespace Ejercicio_13_Billetera.Modelo
         }
         public int BilletesDe20
         {
-            get { return _billeteraVirtual[1, 0]; }
+            get { return _billeteraVirtual[1, 1]; }
             set
             {
                 _billeteraVirtual[1,1] = value;
@@ -34,7 +34,7 @@ namespace Ejercicio_13_Billetera.Modelo
         }
         public int BilletesDe50
         {
-            get { return _billeteraVirtual[2, 0]; }
+            get { return _billeteraVirtual[2, 1]; }
             set
             {
                 _billeteraVirtual[2,1] = value;
@@ -43,7 +43,7 @@ namespace Ejercicio_13_Billetera.Modelo
         }
         public int BilletesDe100
         {
-            get { return _billeteraVirtual[3, 0]; }
+            get { return _billeteraVirtual[3, 1]; }
             set
             {
                 _billeteraVirtual[3,1] = value;
@@ -52,7 +52,7 @@ namespace Ejercicio_13_Billetera.Modelo
         }
         public int BilletesDe200
         {
-            get { return _billeteraVirtual[4, 0]; }
+            get { return _billeteraVirtual[4, 1]; }
             set
             {
                 _billeteraVirtual[4,1] = value;
@@ -61,7 +61,7 @@ namespace Ejercicio_13_Billetera.Modelo
         }
         public int BilletesDe500
         {
-            get { return _billeteraVirtual[5, 0]; }
+            get { return _billeteraVirtual[5, 1]; }
             set
             {
                 _billeteraVirtual[5,1] = value;
@@ -70,7 +70,7 @@ namespace Ejercicio_13_Billetera.Modelo
         }
         public int BilletesDe1000
         {
-            get { return _billeteraVirtual[6, 0]; }
+            get { return _billeteraVirtual[6, 1]; }
             set
             {
                 _billeteraVirtual[6,1] = value;
@@ -95,12 +95,14 @@ namespace Ejercicio_13_Billetera.Modelo
             
             Billetera billeteraNueva = new Billetera();
             billeteraNueva.iD = idNuevaBilletera;
-
-            for (int i = 0; i < 7; i++)
-            {
-                billeteraNueva._billeteraVirtual[i,1] = billetera1._billeteraVirtual[i,1] + billetera2._billeteraVirtual[i,1];
-                billeteraNueva._billeteraVirtual[i,0] = billetera1._billeteraVirtual[i,0];
-            }
+            
+            billeteraNueva.BilletesDe10 = billetera2.BilletesDe10 + billetera1.BilletesDe10;
+            billeteraNueva.BilletesDe20 = billetera2.BilletesDe20 + billetera1.BilletesDe20;
+            billeteraNueva.BilletesDe50 = billetera2.BilletesDe50 + billetera1.BilletesDe50;
+            billeteraNueva.BilletesDe100 = billetera2.BilletesDe100 + billetera1.BilletesDe100;
+            billeteraNueva.BilletesDe200 = billetera2.BilletesDe200 + billetera1.BilletesDe200;
+            billeteraNueva.BilletesDe500 = billetera2.BilletesDe500 + billetera1.BilletesDe500;
+            billeteraNueva.BilletesDe1000 = billetera2.BilletesDe1000 + billetera1.BilletesDe1000;
             
             return billeteraNueva;
         }
