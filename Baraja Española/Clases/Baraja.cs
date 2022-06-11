@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Baraja_Española.Clases
+﻿namespace Baraja_Española.Clases
 {
     internal class Baraja
     {
@@ -23,7 +17,6 @@ namespace Baraja_Española.Clases
                     if(j == 6) j += 2;
                 }
             }
-
         }
 
         public Carta[]? CartasEnBaraja 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Baraja_Española.Clases
+﻿namespace Baraja_Española.Clases
 {
     internal class Carta
     {
@@ -14,8 +8,6 @@ namespace Baraja_Española.Clases
         {
             "Espada", "Basto", "Copa", "Oro"
         };
-        private 
-         
         #region GettersAndSetters
         public int Valor
         {
@@ -31,13 +23,7 @@ namespace Baraja_Española.Clases
         public string Palo
         {
             get => _palo;
-            set
-            {
-                if(value != null)
-                {
-                    _palo = value;
-                }
-            }
+            set => _palo = value;
         }
         
         public string[] TipoDePalos
