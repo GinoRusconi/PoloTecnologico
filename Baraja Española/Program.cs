@@ -37,8 +37,24 @@ do
                 break;
             }
             Console.WriteLine("La siguiente carta es");
+            switch (carta.Palo)
+            {
+                case "Espada":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    break;
+                case "Copa":
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    break;
+                case "Oro":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    break;
+                case "Basto":
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    break;
+            }
             Console.WriteLine($"{carta.Valor} de {carta.Palo}");
             monton.DescartarCarta(carta);
+            Console.ForegroundColor = ConsoleColor.Gray;
             break;
         case 3:
             int cartasDisponibles = baraja.CartasDisponibles();
@@ -85,6 +101,22 @@ static void MostrarCartasObtenidas(Carta[]? cartas)
 {
     foreach (Carta item in cartas)
     {
+        switch (item.Palo)
+        {
+            case "Espada":
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                break;
+            case "Copa":
+                Console.ForegroundColor = ConsoleColor.Red;
+                break;
+            case "Oro":
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                break;
+            case "Basto":
+                Console.ForegroundColor = ConsoleColor.Green;
+                break;
+        }
         Console.WriteLine($"{item.Valor} de {item.Palo}");
     }
+    Console.ForegroundColor = ConsoleColor.Gray;
 }
