@@ -8,7 +8,7 @@ do
 {
     do
     {
-        Console.WriteLine("-----------------------------");
+        Console.WriteLine("Hola soy raul");
         Console.WriteLine("1 - Barajar");
         Console.WriteLine("2 - Mostrar siguiente carta");
         Console.WriteLine("3 - Mostrar cartas disponibles");
@@ -27,6 +27,7 @@ do
         case 1:
             baraja.Barajar();
             Console.WriteLine("La Baraja ha sido barajada");
+            Console.WriteLine("ALOJOMORA");
             Console.Clear();
             break;
         case 2:
