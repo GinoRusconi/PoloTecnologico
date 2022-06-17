@@ -8,10 +8,10 @@ namespace Cuadrilatero.Model
 {
     internal class Trapecio : Cuadrilatero
     {
-        private decimal _altura;
+        private double _altura;
 
         #region Setts and Getters
-        public decimal Altura 
+        public double Altura 
         {
             get { return _altura; } 
             set { _altura = value; } 
@@ -20,12 +20,11 @@ namespace Cuadrilatero.Model
 
         public Trapecio() : base()
         {
-            Console.WriteLine("Ingrese Altura");
             Y = SetMedidas("lado Y");
             Altura = SetMedidas("Altura");
         }
         
-        public override decimal CalcularArea()
+        public override double CalcularArea()
         {
             Area = ((X + Y) / 2)* Altura;
             return Area;

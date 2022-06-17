@@ -8,23 +8,23 @@ namespace Cuadrilatero.Model
 {
     internal abstract class Cuadrilatero
     {
-        private decimal _x;
-        private decimal _y;
-        private decimal _area;
+        private double _x;
+        private double _y;
+        private double _area;
 
         #region Setts and Getters
-        public decimal X 
+        public double X 
         {
             get { return _x; } 
             set { _x = (value > 0) ? value : 0; }
         }
-        public decimal Y 
+        public double Y 
         {
             get { return _y; }
             set { _y = (value > 0) ? value : 0; } 
         }
 
-        public decimal Area
+        public double Area
         {
             get { return _area; }
             set { _area = value; }
@@ -36,14 +36,14 @@ namespace Cuadrilatero.Model
             X = SetMedidas("lado X");
         }
 
-        protected decimal SetMedidas(String nombreDelLado)
+        protected double SetMedidas(String nombreDelLado)
         {
             bool checkValue;
-            decimal valorTesteado = 0;
+            double valorTesteado = 0;
             do
             {
                 Console.WriteLine($"Ingrese {nombreDelLado}");
-                checkValue = decimal.TryParse(Console.ReadLine(), out decimal valor);
+                checkValue = double.TryParse(Console.ReadLine(), out double valor);
                 checkValue = (checkValue && valor > 0);
                 if (!checkValue) Console.WriteLine("El valor ingresado no es un nuemero, o es mayor a 0");
                 else valorTesteado = valor;
@@ -53,6 +53,6 @@ namespace Cuadrilatero.Model
             return valorTesteado;
         }
 
-        public abstract decimal CalcularArea();
+        public abstract double CalcularArea();
     }
 }
