@@ -8,12 +8,11 @@ namespace Cuadrilatero.Model
 {
     internal class Cuadrado : Cuadrilatero
     {
-        public Cuadrado() : base() { }
+        public Cuadrado() : base() { } 
 
         public override double CalcularArea()
         {
-            Area = Math.Pow(X,2);
-
+            Area = Math.Pow(LadoA, 2);
             return Area;
         }
     }

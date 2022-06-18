@@ -8,14 +8,11 @@ namespace Cuadrilatero.Model
 {
     internal class Rectangulo : Cuadrilatero
     {
-        public Rectangulo () : base()
-        {
-            Y = SetMedidas("lado Y"); 
-        }
+        public Rectangulo() : base() { }
 
         public override double CalcularArea()
         {
-            Area = X * Y;
+            Area = LadoA * Altura;
             return Area;
         }
     }
