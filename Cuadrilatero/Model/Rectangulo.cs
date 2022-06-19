@@ -4,18 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuadrilatero.Model
+namespace Cuadrilateros.Model
 {
     internal class Rectangulo : Cuadrilatero
     {
-        public Rectangulo () : base()
-        {
-            Y = SetMedidas("lado Y"); 
-        }
+        public Rectangulo(double[,] vertices) : base(vertices) { }
 
         public override double CalcularArea()
         {
-            Area = X * Y;
+            Area = LadoA * Altura;
             return Area;
         }
     }

@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuadrilatero.Model
+namespace Cuadrilateros.Model
 {
     internal class Cuadrado : Cuadrilatero
     {
-        public Cuadrado() : base() { }
+        public Cuadrado(double[,] vertices) : base(vertices) { } 
 
         public override double CalcularArea()
         {
-            Area = Math.Pow(X,2);
-
+            Area = Math.Pow(LadoA, 2);
             return Area;
         }
     }
