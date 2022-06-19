@@ -8,7 +8,7 @@ namespace Cuadrilatero.Model
 {
     internal class Trapecio : Cuadrilatero 
     {
-        public Trapecio() : base() { }
+        public Trapecio(double[,] vertices) : base(vertices) { }
 
         public override double CalcularArea()
         {

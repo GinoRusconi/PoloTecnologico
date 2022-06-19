@@ -8,7 +8,7 @@ namespace Cuadrilatero.Model
 {
     internal class Rectangulo : Cuadrilatero
     {
-        public Rectangulo() : base() { }
+        public Rectangulo(double[,] vertices) : base(vertices) { }
 
         public override double CalcularArea()
         {

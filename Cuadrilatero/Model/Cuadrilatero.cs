@@ -9,7 +9,7 @@ namespace Cuadrilatero.Model
     internal abstract class Cuadrilatero
     {
 
-        private double[,] _Vertices = new double[4,2];
+        private double[,] _Vertices;
 
         private double _LadoA;
         private double _LadoB;
@@ -45,27 +45,16 @@ namespace Cuadrilatero.Model
         }
         #endregion
 
-        public Cuadrilatero()
+        public Cuadrilatero(double[,] vertices)
         {
-            for (int Vertice = 0; Vertice < 4; Vertice++)
-            {
-                for (int cordenada = 0; cordenada < 2; cordenada++)
-                {
-                    bool checkValue;
-                    do
-                    {
-                        Console.WriteLine($"Ingrese la cordenada {((cordenada == 0) ? 'x': 'y')} del vertice {Vertice+1}");
-                        checkValue = double.TryParse(Console.ReadLine(), out double valor);
-                        if (!checkValue) Console.WriteLine("El valor ingresado no es un nuemero");
-                        else Vertices[Vertice,cordenada] = valor;
-                    } while (!checkValue);
-                }
-            }
+            Vertices = vertices;
+
 
             LadoA = Vertices[1,0] - Vertices[0,0];
             Altura = Vertices[1,1] - Vertices[2,1];
             LadoB = Vertices[2,0] - Vertices[3,0];
         }
+
         public abstract double CalcularArea();
     }
 }
