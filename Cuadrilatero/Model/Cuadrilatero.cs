@@ -4,55 +4,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuadrilateros.Model
+namespace Cuadrilatero.Model
 {
     internal abstract class Cuadrilatero
     {
-
-        private double[,] _Vertices;
-
-        private double _LadoA;
-        private double _LadoB;
-        private double _Altura;
-        private double _Area;
+        private double _x;
+        private double _y;
+        private double _area;
 
         #region Setts and Getters
-        public double[,] Vertices
+        public double X 
         {
-            get { return _Vertices;}
-            set { _Vertices = value; }
+            get { return _x; } 
+            set { _x = (value > 0) ? value : 0; }
         }
-        public double Area 
-        { 
-            get { return _Area;} 
-            set { _Area = value; }
+        public double Y 
+        {
+            get { return _y; }
+            set { _y = (value > 0) ? value : 0; } 
         }
 
-        public double LadoA 
+        public double Area
         {
-            get { return _LadoA;} 
-            set { _LadoA = value;} 
-        }
-        public double LadoB
-        {
-            get { return _LadoB; }
-            set { _LadoB = value; }
-        }
-        public double Altura
-        {
-            get { return _Altura; }
-            set { _Altura = value; }
+            get { return _area; }
+            set { _area = value; }
         }
         #endregion
 
-        public Cuadrilatero(double[,] vertices)
+        public Cuadrilatero()
         {
-            Vertices = vertices;
+            X = SetMedidas("lado X");
+        }
 
+        protected double SetMedidas(String nombreDelLado)
+        {
+            bool checkValue;
+            double valorTesteado = 0;
+            do
+            {
+                Console.WriteLine($"Ingrese {nombreDelLado}");
+                checkValue = double.TryParse(Console.ReadLine(), out double valor);
+                checkValue = (checkValue && valor > 0);
+                if (!checkValue) Console.WriteLine("El valor ingresado no es un nuemero, o es mayor a 0");
+                else valorTesteado = valor;
 
-            LadoA = Vertices[1,0] - Vertices[0,0];
-            Altura = Vertices[1,1] - Vertices[2,1];
-            LadoB = Vertices[2,0] - Vertices[3,0];
+            } while (!checkValue);
+
+            return valorTesteado;
         }
 
         public abstract double CalcularArea();

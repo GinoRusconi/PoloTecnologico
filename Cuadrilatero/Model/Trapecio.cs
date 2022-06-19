@@ -4,15 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuadrilateros.Model
+namespace Cuadrilatero.Model
 {
-    internal class Trapecio : Cuadrilatero 
+    internal class Trapecio : Cuadrilatero
     {
-        public Trapecio(double[,] vertices) : base(vertices) { }
+        private double _altura;
 
+        #region Setts and Getters
+        public double Altura 
+        {
+            get { return _altura; } 
+            set { _altura = value; } 
+        }
+        #endregion
+
+        public Trapecio() : base()
+        {
+            Y = SetMedidas("lado Y");
+            Altura = SetMedidas("Altura");
+        }
+        
         public override double CalcularArea()
         {
-            Area = ((LadoA + LadoB) / 2) * Altura;
+            Area = ((X + Y) / 2)* Altura;
             return Area;
         }
     }
